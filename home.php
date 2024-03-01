@@ -40,8 +40,8 @@
                                 Usuários
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="?page=cadastro_usuarios">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="?page=listagem_usuarios">Listagem</a></li>
+                                <li><a class="dropdown-item" href="?page=cad_u">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="?page=list_u">Listagem</a></li>
                             </ul>
                         </div>
                         <!-- <a class="nav-link" href="?page=lista">Livros</a> -->
@@ -74,19 +74,19 @@
                             
                             // usuarios
                             case "servicos_u":
-                                include("servicos_u.php");
+                                include("usuarios/servicos_u.php");
                                 break;
                             case "cad_u":
-                                include("cad_u.php");
+                                include("usuarios/cad_u.php");
                                 break;
                             case "list_u":
-                                include("list_u.php");
+                                include("usuarios/list_u.php");
                                 break;
                             case "edt_u":
-                                include("edt_u.php");
+                                include("usuarios/edt_u.php");
                                 break;
                             case "del_u":
-                                include("del_u.php");
+                                include("usuarios/del_u.php");
                                 break;
                             
                             // livros
