@@ -1,4 +1,4 @@
-<h1>CADASTRO DE LIVROS</h1>
+<!-- <h1>CADASTRO DE LIVROS</h1> -->
 
 <form action="?page=servicos_l" method="post" class="mt-5" enctype="multipart/form-data">
     <input type="hidden" name="acao" value="cadastrar" required>
@@ -72,6 +72,6 @@
             <label class="mx-2 mb-5"for="sinopse"> Sinopse:</label>
         </div>
     </div>
-
+    <button type='button' class='btn btn-success mt-3 mb-5' onclick="location.href='?page=list_l'">Voltar</button>
     <button type="submit" class="btn btn-primary mt-3 mb-5">Cadastrar</button>
 </form>

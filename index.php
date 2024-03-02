@@ -28,6 +28,10 @@
             justify-content: center;
             display: flex;
         }
+
+        .btn{
+            border-radius: 2px !important;
+        }
     </style>
 
 </head>

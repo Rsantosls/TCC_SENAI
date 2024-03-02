@@ -1,4 +1,4 @@
-<h1>EDIÇÃO DE USUÁRIOS</h1>
+<!-- <h1>EDIÇÃO DE USUÁRIOS</h1> -->
 
 <?php 
     $id=$_GET['id'];
@@ -52,5 +52,6 @@
             <!-- <input type="email" name="email" placeholder="Digite email do aluno" class="form-control" required> -->
         </div>
     </div>
+    <button type='button' class='btn btn-success mt-3 mb-5' onclick="location.href='?page=list_u'">Voltar</button>
     <button type="submit" class="btn btn-primary mt-3 mb-5">Concluir</button>
 </form>

@@ -1,4 +1,5 @@
-<h1>LISTAGEM DE USUARIOS</h1>
+<!-- <h1>LISTAGEM DE LIVROS</h1> -->
+<a class="btn btn-primary" class="nav-link" href="?page=cad_l">Cadastrar Livros</a>
 
 <?php 
         $sql = "SELECT * FROM livros;";

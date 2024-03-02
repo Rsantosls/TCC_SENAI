@@ -1,4 +1,4 @@
-<h1>EDIÇÃO DE LIVROS</h1>
+<!-- <h1>EDIÇÃO DE LIVROS</h1> -->
 
 <?php 
     $id=$_GET['id'];
@@ -95,6 +95,7 @@
                     ?></textarea>
                 </div>
             </div>
+            <button type='button' class='btn btn-success mt-3 mb-5' onclick="location.href='?page=list_l'">Voltar</button>
             <button type="submit" class="btn btn-primary mt-3 mb-5">Concluir</button>
         </div>
     </div>
