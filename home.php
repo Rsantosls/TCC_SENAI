@@ -51,8 +51,8 @@
                                 Livros
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="?page=cadastro_livros">Cadastro</a></li>
-                                <li><a class="dropdown-item" href="?page=listagem_livros">Listagem</a></li>
+                                <li><a class="dropdown-item" href="?page=cad_l">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="?page=list_l">Listagem</a></li>
                             </ul>
                         </div>                       
                             <span class="nav-link text-light">| Olá, <?php echo $_SESSION['operador'] ?></span>
@@ -91,19 +91,19 @@
                             
                             // livros
                             case "servicos_l":
-                                include("servicos_l.php");
+                                include("livros/servicos_l.php");
                                 break;
                             case "cad_l":
-                                include("cad_l.php");
+                                include("livros/cad_l.php");
                                 break;
                             case "list_l":
-                                include("list_l.php");
+                                include("livros/list_l.php");
                                 break;
                             case "edt_l":
-                                include("edt_l.php");
+                                include("livros/edt_l.php");
                                 break;
                             case "del_l":
-                                include("del_l.php");
+                                include("livros/del_l.php");
                                 break;
                             
                             // padrão

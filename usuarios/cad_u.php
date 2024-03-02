@@ -22,7 +22,7 @@
         <div class="col-3">
             <!-- NASCIMENTO -->
             <label for="nascimento" class="form-label"> Nascimento:</label>
-            <input type="date" name="nascimento" placeholder="Exemplo: 10/12/1970" class="form-control" value="<?php echo date('d-m-Y');?>" required>
+            <input type="date" name="nascimento" placeholder="Exemplo: 10/12/1970" class="form-control"required>
         </div>
         <div class="col-3">
             <!-- TELEFONE -->

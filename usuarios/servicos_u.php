@@ -2,7 +2,6 @@
 
 <?php 
     $action = $_POST["acao"];
-    date_default_timezone_set("America/Sao_Paulo");
     
     switch($action){
         
@@ -11,8 +10,6 @@
             $nome = $_POST["nome"];
             $email = $_POST["email"];
             $nascimento = $_POST["nascimento"];
-            //$nascimento = date("d-m-Y", strtotime($new_date));
-            //echo $nascimento;
             $telefone = $_POST["telefone"];
             $situacao = $_POST["situacao"];
             
