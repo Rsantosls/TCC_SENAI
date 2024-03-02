@@ -26,6 +26,7 @@
                                 <div class='col-6'>
                                     <input type='hidden' name='acao' value='excluir'>
                                     <input type='hidden' name='id' value='{$livro->id}'>
+                                    <input type='hidden' name='imagem' value='$livro->imagem'>
                                     <p><b>Nome</b>: {$livro->titulo}</p>
                                     <p><b>Autor</b>: {$livro->autor}</p>
                                     <p><b>Categoria</b>: {$livro->categoria}</p>

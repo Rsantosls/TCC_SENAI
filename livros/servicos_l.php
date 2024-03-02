@@ -58,12 +58,14 @@
         case "editar":
             $id = $_POST["id"];
             $old_imagem = $_POST["old_imagem"];
+            echo "<script>alert('caminho da antiga imagem: $old_imagem!')</script>";
             
-            if(isset($_FILES["imagem"]) && !empty($_FILES["imagem"]))
+            if(isset($_FILES["imagem"]["name"]) && !empty($_FILES["imagem"]["name"]))
             {
                 unlink($old_imagem);
-                echo "unlik feito.";
+                echo "<script>alert('$old_imagem deletada!')</script>";
                 $new_imagem = "imgs/".$_FILES["imagem"]["name"]; 
+                echo "<script>alert('$new_imagem é a nova imagem!')</script>";
                 move_uploaded_file( $_FILES["imagem"]["tmp_name"], $new_imagem);
                 $imagem = $new_imagem;
                 //echo "<script>alert('Upload de imagem realizado!')</script>";
@@ -100,12 +102,22 @@
         //Exclusão de alunos no banco de dados
         case "excluir":
             $id = $_POST["id"];
+            $imagem = $_POST["imagem"];
+            echo $imagem;
+
+            if( is_file($imagem) && !empty($imagem) )
+            {
+                echo "<script>alert('$imagem deletada!')</script>";
+                unlink($imagem);
+            }else
+            {echo "<script>alert('$imagem não foi encontrada!')</script>";}
+
             $sql = "DELETE FROM livros WHERE id={$id};";
             $resultado = $conexao->query($sql);
 
             if($resultado){
                 echo "<script>alert('Livro removido com sucesso!')</script>";
-                echo "<script>location.href='?page=list_l'</script>";
+                // echo "<script>location.href='?page=list_l'</script>";
             }else{
                 "<script>
                     alert('Houve um erro ao tentar remover o livro. Tente novamente mais tarde!')   

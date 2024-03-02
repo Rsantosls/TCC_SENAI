@@ -36,19 +36,21 @@
                 else{$disponibilidade = 'text-danger';}
 
                 // Em Atraso
-                date_default_timezone_set("America/Sao_Paulo");               
-                $data_hoje = date("d/m/Y");
-                echo $data_hoje;
-                echo $data_r;
-                if( ($data_r == "--") || (strtotime($data_r) > strtotime($data_hoje))){
-                    echo "Não há atraso.<br>";
+                date_default_timezone_set("America/Sao_Paulo");                             
+                $format = "d/m/Y";
+                $data_hoje = date($format);
+                $d_hoje = date_create_from_format($format, $data_hoje);
+                $d_r = date_create_from_format($format, $data_r);
+    
+                
+                if( ($data_r == "--") || ($d_r > $d_hoje)){
+                    //echo "Não há atraso.<br>";
                     $atraso = 'table-light';}
                 else{
-                    echo "Há atraso.<br>";
+                    //echo "Há atraso.<br>";
                     $atraso = 'table-danger';}
         
-                // if($usuario['situacao'] == 'Normal'){$check_s = 'text-primary';}
-                // else{$check_s = 'text-danger';}
+                // Redução de texto da sinopse
                 $sinopse = substr($livro['sinopse'], 0, 100);
                 
                 echo
