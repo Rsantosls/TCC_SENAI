@@ -20,13 +20,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>tcc - home</title>
     <style>
-        .btn{
+        .btn,
+        .form-control,
+        .form-select,
+        #msg-box-txt{
             border-radius: 2px !important;
         }
         .special {
             background-color: blueviolet !important;
             color: whitesmoke !important;
-            /* font-weight: bold !important; */
+        }
+        
+        #msg-box{
+            position: relative;
+        }
+        #fechar{
+            position: absolute;
+            top: .5%;
+            right: .5%;
+            z-index: 1;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        #fechar:hover{
+            cursor:pointer;
+            opacity: .8;
+        }
+        #help:hover{
+            cursor:pointer;
+            opacity: .8;
         }
     </style>
 </head>
@@ -74,7 +96,7 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container-fluid px-5">
             <div class="row">
                 <div class="col mt-5">
                     <?php 
@@ -135,8 +157,6 @@
             </div>
         </div>
     </main>
-     
-    
 </body>
 
 </html>

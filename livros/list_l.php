@@ -1,12 +1,72 @@
 <!-- <h1>LISTAGEM DE LIVROS</h1> -->
-<a class="btn btn-primary" class="nav-link" href="?page=cad_l">Cadastrar Livros</a>
 
 <?php 
-        $sql = "SELECT * FROM livros;";
+    $tipo = $_GET['tipo']??'';
+    $busca = $_GET['busca']??'';
+
+    if($tipo!=''){
+        $sql = "SELECT * FROM livros WHERE {$tipo} LIKE '{$busca}%'";
         $resultado = $conexao->query($sql);
-        if($resultado != null){           
-            echo 
-            "<table class='mt-5 table table-bordered align-middle'>
+        $row  = $resultado->fetch_object();
+        $qtd = $resultado->num_rows;
+        if($qtd >0){
+        echo "
+        <div id='msg-box'>
+            <i id='fechar' class='bi bi-x-square'></i>
+            <p id='msg-box-txt'  class='alert alert-success' role='alert' mt-4><i class='bi bi-check-circle-fill'></i> Busca concluída.</p>
+        </div>       
+        ";}
+        else{
+        echo "
+        <div id='msg-box'>
+            <i id='fechar' class='bi bi-x-square'></i>
+            <p class='alert alert-danger' mt-4><i class='bi bi-x-circle-fill'></i> A busca não retornou resultado.</p>
+        </div>
+        ";
+        }
+    }
+    else{
+        $sql = "SELECT * FROM livros;";
+    } 
+?>
+
+
+<div class="row g-3">
+   
+    <div class="col-6">
+        <a class="btn btn-dark" class="nav-link" href="?page=cad_l"><i class="bi bi-plus-circle"></i> Cadastrar Livros</a>
+    </div>
+    
+    <div class="col-6">
+        <form class="row g-3 justify-content-end" action="?page=servicos_l" method="post">           
+            <input type="text" name="acao" value="buscar" hidden>
+            <div class="col-auto">
+                <i id="help" data-bs-toggle="modal" data-bs-target="#helpModal" style="font-size:1.5rem" class="bi bi-question-circle"></i>
+            </div> 
+            <div class="col-auto">
+                <input type="text" name="busca" class="form-control" placeholder="Escreva o que deseja buscar..." area-label="busca">
+            </div>           
+            <div class="col-auto">
+                <select name="tipo" class="form-select" area-label="tipo" required>
+                    <option value=" " selected disabled hidden>-- Tipo --</option>
+                    <option value="titulo">Título</option>
+                    <option value="autor">Autor</option>
+                    <option value="categoria">Categoria</option>
+                </select>
+            </div>            
+            <div class="col-auto">
+                <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i> Buscar</button>
+            </div>
+                        
+        </form>       
+    </div>
+</div>
+
+<?php      
+        $resultado = $conexao->query($sql);
+        if($resultado != null){ 
+            echo          
+            "<table class='mt-2 table table-bordered align-middle'>
                 <thead class='text-center'>
                     <tr class='table-dark align-middle'>
                         <th scope='col'>Id</th>
@@ -16,6 +76,7 @@
                         <th scope='col'>Categoria</th>
                         <th scope='col'>Sinopse</th>
                         <th scope='col'>Situação</th>
+                        <th scope='col'>Usuário</th>
                         <th scope='col'>Entrega</th>
                         <th scope='col'>Retorno</th>
                         <th scope='col'>Ações</th>
@@ -42,7 +103,6 @@
                 $data_hoje = date($format);
                 $d_hoje = date_create_from_format($format, $data_hoje);
                 $d_r = date_create_from_format($format, $data_r);
-    
                 
                 if( ($data_r == "--") || ($d_r > $d_hoje)){
                     //echo "Não há atraso.<br>";
@@ -53,7 +113,7 @@
         
                 // Redução de texto da sinopse
                 $sinopse = substr($livro['sinopse'], 0, 100);
-                
+    
                 echo
                 "<tbody class='text-center'>
                     <tr class='$atraso'> 
@@ -64,19 +124,50 @@
                         <td>{$livro['categoria']}</td>
                         <td>{$sinopse}...</td>
                         <td class='$disponibilidade'>{$livro['situacao']}</td>
+                        <td>{$livro['usuario']}</td>
                         <td>{$data_i}</td>
                         <td>{$data_r}</td>
                         <td>
                             <div class='btn-group-vertical' role='group' aria-label='Vertical button group'>
-                                <button class='btn btn-success' onclick=\"location.href='?page=edt_l&id={$livro['id']}'\">Editar</button>
-                                <button class='btn btn-danger' onclick=\"location.href='?page=del_l&id={$livro['id']}'\">Excluir</button>
+                                <button class='btn btn-outline-success' onclick=\"location.href='?page=edt_l&id={$livro['id']}'\">Editar</button>
+                                <button class='btn btn-outline-danger' onclick=\"location.href='?page=del_l&id={$livro['id']}'\">Excluir</button>
                             </div>
                         </td>
                     </tr>
                 </tbody>";
             }
         }else{
-            echo "<p class='alert alert-danger' mt-4>Não há nenhum livro cadastrado.</p>";
+            echo "<p class='alert alert-danger' mt-4><i class='bi bi-x-circle-fill'></i> Não há nenhum livro cadastrado.</p>";
         };
         echo "</table>";
     ?>
+
+        <!-- Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="helpModalLabel">Categorias</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Drama</li>
+                            <li class="list-group-item">Terror</li>
+                            <li class="list-group-item">Fantasia</li>
+                            <li class="list-group-item">Ficção Científica</li>
+                            <li class="list-group-item">História em Quadrinhos</li>
+                            <li class="list-group-item">Outros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        function close(){
+            var msg_div = document.getElementById("msg-box")
+            msg_div.style.display += "none";          
+        }
+        document.getElementById("fechar").addEventListener("click", close);
+    </script>
