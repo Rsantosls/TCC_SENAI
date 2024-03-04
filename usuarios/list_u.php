@@ -99,7 +99,7 @@
             </tbody>";
         }
     }else{
-        echo "<p class='alert alert-danger' mt-4>Não há nenhum aluno cadastrado.</p>";
+        echo "<p class='alert alert-danger' mt-4>Não há nenhum usuário cadastrado.</p>";
     };
     echo "</table>";
 ?>

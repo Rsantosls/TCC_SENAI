@@ -1,0 +1,35 @@
+==========================
+COMANDO SQL:
+==========================
+login: Admin / senha: 123
+
+CREATE DATABASE biblioteca_cultural;
+
+USE biblioteca_cultural;
+
+CREATE TABLE operadores(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(80),
+    senha VARCHAR(15)
+);
+
+CREATE TABLE usuarios(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(80),
+    nascimento DATE,
+    telefone VARCHAR(11),
+    email VARCHAR(80),
+    situacao VARCHAR(20),
+);
+
+CREATE TABLE livros(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    imagem VARCHAR(255),
+    titulo VARCHAR(100),
+    autor VARCHAR(80),
+    categoria VARCHAR(80),
+    sinopse VARCHAR(500),
+    situacao VARCHAR(80),
+    data_inicio DATE,
+    data_retorno DATE
+);
