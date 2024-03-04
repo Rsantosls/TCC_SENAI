@@ -1,7 +1,10 @@
 <!-- <h1>CADASTRO DE LIVROS</h1> -->
 
+<div class="px-3 py-2 text-light" style="background-color: #0D3973" >
+    <span class="display-6">Cadastro de Livros</span>
+</div>
 
-<div class="card mb-5">
+<div class="card mb-5" style="border-radius: 2px !important;">
     <div class="card-body">
         <form action="?page=servicos_l" method="post" enctype="multipart/form-data">
             <input type="hidden" name="acao" value="cadastrar" required>
@@ -95,8 +98,8 @@
                     <label class="mx-2 mb-5" for="sinopse"><b>Sinopse:</b></label>
                 </div>
             </div>
-            <button type='button' class="btn btn-dark mt-2" onclick="location.href='?page=list_l'"><i class="bi bi-arrow-counterclockwise" style="font-size:1.25rem"></i></button>
-            <button type="submit" class="btn btn-primary mt-2" style="font-size:1.25rem">Cadastrar</button>
+            <button type='button' class="btn btn-outline-dark mt-2" onclick="location.href='?page=list_l'"><i class="bi bi-arrow-counterclockwise" style="font-size:1.25rem"></i></button>
+            <button type="submit" class="btn btn-outline-primary mt-2" style="font-size:1.25rem">Cadastrar</button>
         </form>
     </div>
 </div>

@@ -1,12 +1,15 @@
-<!-- <h1>EDIÇÃO DE LIVROS</h1> -->
-
 <?php 
     $id=$_GET['id'];
     $sql = "SELECT * FROM livros WHERE id = {$id}";
     $resultado = $conexao->query($sql);
     $livro = $resultado->fetch_object();   
 ?>
-<div class="card mb-5">
+
+<div class="px-3 py-2 text-light" style="background-color: #0D3973" >
+    <span class="display-6">Edição de Livros</span>
+</div>
+
+<div class="card mb-5" style="border-radius: 2px !important;">
     <div class="card-body">
         <form action="?page=servicos_l" method="post" class="mt-2" enctype="multipart/form-data">
             <input type="hidden" name="acao" value="editar">
@@ -118,8 +121,8 @@
                             ?></textarea>
                         </div>
                     </div>
-                    <button type='button' class="btn btn-dark mt-3" onclick="location.href='?page=list_l'"><i class="bi bi-arrow-counterclockwise" style="font-size:1.25rem"></i></button>
-                    <button type="submit" class="btn btn-primary mt-3" style="font-size:1.25rem">Concluir</button>
+                    <button type='button' class="btn btn-outline-dark mt-3" onclick="location.href='?page=list_l'"><i class="bi bi-arrow-counterclockwise" style="font-size:1.25rem"></i></button>
+                    <button type="submit" class="btn btn-outline-primary mt-3" style="font-size:1.25rem">Concluir</button>
                 </div>
             </div>
         </form>

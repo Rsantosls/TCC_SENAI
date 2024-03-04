@@ -1,4 +1,3 @@
-<!-- <h1>EXCLUSÃO DE USUARIOS</h1> -->
 <div>
     <?php 
         $id=$_GET['id'];
@@ -20,8 +19,8 @@
                             <p><b>Telefone</b>: {$usuario->telefone}</p>
                             <p><b>Email</b>: {$usuario->email}</p>
                             <p><b>Situação</b>: {$usuario->situacao}</p>
-                            <button type='button' class='btn btn-success' onclick=\"location.href='?page=list_u'\">Cancelar</button>
-                            <button type='submit' class='btn btn-danger'>Excluir definitivamente</button>                        
+                            <button type='button' class='btn btn-outline-primary' onclick=\"location.href='?page=list_u'\">Cancelar</button>
+                            <button type='submit' class='btn btn-outline-danger'>Excluir definitivamente</button>                        
                         </form>
                     </div>
                 </div>";

@@ -18,8 +18,19 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
     <title>tcc - home</title>
     <style>
+
+        body {
+            background-color: #f2f2f2;
+            font-family: "Red Hat Display", sans-serif;
+        }
+
         .btn,
         .form-control,
         .form-select,
@@ -27,8 +38,14 @@
             border-radius: 2px !important;
         }
         .special {
-            background-color: blueviolet !important;
+            background-color: #0D2340 !important;
             color: whitesmoke !important;
+        }
+
+        #btn-usuario:hover,
+        #btn-livro:hover,
+        #logout:hover{
+            background-color: #0D2340 !important;
         }
         
         #msg-box{
@@ -50,6 +67,15 @@
             cursor:pointer;
             opacity: .8;
         }
+        .navbar{
+            background-color: #0D3973 !important;
+        }
+
+        .table-darkblue th{
+            color: whitesmoke !important;
+            background-color: #0D3973 !important;
+        }
+
     </style>
 </head>
 
@@ -58,8 +84,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <div class="container-fluid mx-5">
-                
-                <a class="display-5 navbar-brand" href="home.php">Biblioteca LOGO</a>
+                <img class="me-3 img-fluid" width="75" height="75" src="sys_imgs/logo_snotravx.png">
+                <a class="display-5 navbar-brand" href="home.php">SNOTRA VX</a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -85,7 +111,7 @@
                             <i class="bi bi-person-circle text-light me-2" style="font-size: 1.5rem"></i> Olá, <?php echo $_SESSION['operador']?>
                         </span>
                         
-                        <a class="btn btn-dark nav-link" href="logout.php" style="display:flex; align-items: center;">
+                        <a id="logout" class="btn btn-dark nav-link" href="logout.php" style="display:flex; align-items: center;">
                             <i class="bi bi-box-arrow-right text-light me-2" style="font-size: 1.5rem"></i> SAIR 
                         </a>                                                                  
                     </div>

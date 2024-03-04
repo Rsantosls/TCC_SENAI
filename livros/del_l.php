@@ -1,4 +1,3 @@
-<!-- <h1>EXCLUSÃO DE LIVROS</h1> -->
 <div>
     <?php 
         $id=$_GET['id'];
@@ -32,10 +31,11 @@
                                     <p><b>Categoria</b>: {$livro->categoria}</p>
                                     <p><b>Sinopse</b>: {$sinopse}</p>
                                     <p><b>Situação</b>: {$livro->situacao}</p>
+                                    <p><b>Usuário</b>: {$livro->usuario}</p>
                                     <p><b>Data de Entrega</b>: {$data_i}</p>
                                     <p><b>Data de Retorno</b>: {$data_r}</p>
-                                    <button type='button' class='btn btn-success' onclick=\"location.href='?page=list_l'\">Cancelar</button>
-                                    <button type='submit' class='btn btn-danger'>Excluir definitivamente</button>   
+                                    <button type='button' class='btn btn-outline-primary' onclick=\"location.href='?page=list_l'\">Cancelar</button>
+                                    <button type='submit' class='btn btn-outline-danger'>Excluir definitivamente</button>   
                                 </div>
                             </div>                                         
                         </form>

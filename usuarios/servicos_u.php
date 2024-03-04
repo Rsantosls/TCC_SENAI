@@ -1,5 +1,3 @@
-<h1>SERVIÇO DE USUARIOS</h1>
-
 <?php 
     $action = $_POST["acao"];
     
@@ -37,8 +35,7 @@
                     location.href='?page=list_u'
                 </script>";
             }
-            //printf($conexao->error);
-        break;
+            break;
 
         //Edição de usuários
         case "editar":
@@ -52,7 +49,6 @@
             $sql = "UPDATE usuarios SET nome='{$nome}', email='{$email}', nascimento='{$nascimento}', telefone='{$telefone}', situacao='{$situacao}'
             WHERE id={$id};";
             $resultado = $conexao->query($sql);
-            //printf($db->error);
             if($resultado){
                 echo "<script>alert('Usuário editado com sucesso!')</script>";
                 echo "<script>location.href='?page=list_u'</script>";
@@ -61,7 +57,7 @@
                     alert('Houve um erro ao editar o item. Tente novamente mais tarde!')   
                 </script>";
             }
-        break;
+            break;
 
         //Exclusão de alunos no banco de dados
         case "excluir":
@@ -77,7 +73,25 @@
                     alert('Houve um erro ao tentar remover o usuário. Tente novamente mais tarde!')   
                 </script>";
             };
-        break;
+            break;
+
+        case "buscar":
+            $tipo = $_POST["tipo"]??'';
+            $busca = $_POST["busca"]??'';
+                
+            switch($tipo){
+                case "nome":
+                    echo "<script>location.href='?page=list_u&tipo={$tipo}&busca={$busca}'</script>";
+                    break;
+                case "email":
+                    echo "<script>location.href='?page=list_u&tipo={$tipo}&busca={$busca}'</script>";
+                    break;
+                case "situacao":
+                    echo "<script>location.href='?page=list_u&tipo={$tipo}&busca={$busca}'</script>";
+                    break;
+                default:
+                    echo "<script>location.href='?page=list_u'</script>";  
+            }
     };
 
 ?>
