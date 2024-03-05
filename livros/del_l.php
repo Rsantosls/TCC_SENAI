@@ -8,9 +8,9 @@
         if($livro){ 
             $data_i = $livro->data_inicio;
             $data_r = $livro->data_retorno;   
-            if($data_i == "0000-00-00"){$data_i = '--';}
+            if($data_i == "0001-01-01"){$data_i = '--';}
             else{$data_i = date('d/m/Y', strtotime($livro->data_inicio));}
-            if($data_r == "0000-00-00"){$data_r = '--';}
+            if($data_r == "0001-01-01"){$data_r = '--';}
             else{$data_r = date('d/m/Y', strtotime($livro->data_retorno));}
             $sinopse = substr($livro->sinopse, 0, 100);
             echo
@@ -25,7 +25,7 @@
                                 <div class='col-6'>
                                     <input type='hidden' name='acao' value='excluir'>
                                     <input type='hidden' name='id' value='{$livro->id}'>
-                                    <input type='hidden' name='imagem' value='$livro->imagem'>
+                                    <input type='hidden' name='imagem' value='{$livro->imagem}'>
                                     <p><b>Nome</b>: {$livro->titulo}</p>
                                     <p><b>Autor</b>: {$livro->autor}</p>
                                     <p><b>Categoria</b>: {$livro->categoria}</p>

@@ -84,6 +84,7 @@
                             <label for="usuario" class="form-label"><b>Usuário:</b></label>
                             <select name="usuario" class="form-select" required>
                                 <option value="<?php echo $livro->usuario; ?>" selected hidden><?php echo $livro->usuario; ?></option>
+                                <option value="--">--</option>
                                 <!-- Catálogo de usuários -->
                                 <?php
                                     $sql = "SELECT * FROM usuarios;";

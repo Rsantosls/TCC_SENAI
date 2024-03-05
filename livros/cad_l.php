@@ -34,7 +34,7 @@
                 <div class="col-6">
                     <!-- CATEGORIA -->
                     <label for="categoria" class="form-label"><b>Categoria:</b></label>
-                    <select name="categoria" class="form-select" required>
+                    <select name="categoria" class="form-select">
                         <option value=" " selected disabled hidden>-- escolha --</option>
                         <option value="Drama">Drama</option>
                         <option value="Terror">Terror</option>
@@ -61,7 +61,7 @@
                 <div class="col-3">
                     <label for="usuario" class="form-label"><b>Usuário:</b></label>
                     <select name="usuario" class="form-select" required>
-                        <option value=" " selected disabled hidden>-- escolha --</option>
+                        <option value="--" selected>--</option>
                         <!-- Catálogo de usuários -->
                         <?php
                             $sql = "SELECT * FROM usuarios;";

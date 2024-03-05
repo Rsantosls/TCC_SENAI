@@ -15,8 +15,8 @@
     }
 </style>
 
-<div id="boasvindas_box" class="text-white bg-dark p-5 rounded m-3" style="
-    background-image: url(imgs/home-card-background.jpg);
+<div id="boasvindas_box" class="text-white bg-dark p-4 rounded" style="
+    background-image: url(sys_imgs/home-card-background.jpg);
     background-size: cover;
     background-blend-mode: overlay;
     background-color: rgba(0,0,0,0.2);

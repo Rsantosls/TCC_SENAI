@@ -33,3 +33,4 @@ CREATE TABLE livros(
     data_inicio DATE,
     data_retorno DATE
 );
+

@@ -38,12 +38,10 @@
                 <div class="col-6">
                     <!-- SITUAÇÃO -->
                     <label for="situacao" class="form-label"><b>Situação:</b></label>
-                    <select name="situacao" class="form-control" required>
-                        <option value='' selected disabled hidden>-- escolha --</option>
-                        <option value="Normal">Normal</option>
+                    <select name="situacao" class="form-control">
+                        <option value='Normal' selected>Normal</option>
                         <option value="Irregular">Irregular</option>
                     </select>
-                    <!-- <input type="email" name="email" placeholder="Digite email do aluno" class="form-control" required> -->
                 </div>
             </div>
             <button type='button' class='btn btn-outline-dark mt-2 mb-1' onclick="location.href='?page=list_u'"><i class="bi bi-arrow-counterclockwise" style="font-size:1.25rem"></i></button>
